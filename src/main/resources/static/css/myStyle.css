@@ -1,0 +1,61 @@
+.separador{
+    margin-left: 500px;
+    margin-right: 150px;
+    margin-top: 5px;
+    float: right;
+    font-size: 25px;
+}
+.menuOpciones{
+    cursor: pointer;
+    height: 870px;
+    width: 700px;
+    opacity: 0.96;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    /*margin-left: 890px;*/
+    margin-left: 600px;
+    position: absolute;
+}
+.menuContenido {
+    /*display: none;*/
+    position: absolute;
+    background-color: #E42090;
+    min-width: 160px;
+    /*box-shadow: -20px 1px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+    left: 50%;
+    top: -100px;
+    width: 960px;
+    height: 923px;
+    opacity: 0.96;
+}
+.menuContenido a {
+    color: #f5BDD6;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menuPrincipal{
+    position: absolute;
+    left: 40%;  
+
+}
+.menuContenido a:hover {
+    /*background-color: greenyellow*/
+    color: #fffeff;
+    text-decoration: none;
+}
+
+.menuPrincipal:hover .menuContenido {
+    display: block;
+}
+.menuPrincipal:hover .dropbtn {
+    /*background-color: brown;*/
+}

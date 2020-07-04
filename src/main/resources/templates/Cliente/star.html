@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+</head>
+<body>
+
+	<header th:replace="layout/layout ::header"></header>
+	<main>
+		<section class="container">
+			<div class="card text-center">
+				<div class="card-header">Clientes Registrados</div>
+				<div class="card-body">
+
+					<table class="table table-hover">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Apellidos</th>
+								<th scope="col">Nombres</th>
+								<th scope="col">Correo</th>
+								<th scope="col">Distrito</th>
+								<th scope="col">Password</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="cliente: ${clientes}">
+								<th scope="row" th:text=${cliente.id}>1</th>
+								<td th:text=${cliente.apellidos}>.</td>
+								<td th:text=${cliente.nombres}>.</td>
+								<td th:text=${cliente.correo}>.</td>
+								<td th:text=${cliente.distrito}>.</td>
+								<td th:text=${cliente.password}>.</td>
+								<td>
+								
+								<a sec:authorize="hasAuthority('ACCESS_EDITCOMPRADOR')" th:href="@{'/compraencasa/cliente/edit/' + ${cliente.id}}" class="btn btn-warning"> <i class="fas fa-edit"></i> </a>
+								<a sec:authorize="hasAuthority('ACCESS_DELCOMPRADOR')" th:href="@{'/compraencasa/cliente/del/' + ${cliente.id}}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+								
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+
+
+				</div>
+				<div class="card-footer text-center">
+				<a th:href ="@{/compraencasa/cliente/registrar}" class= "btn btn-primary"><i class="fas fa-user-plus"></i> Registrar Cliente</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>

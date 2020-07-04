@@ -1,0 +1,174 @@
+.slider{
+   width: 95;
+   margin: lef;
+   overflow: hidden;
+
+}
+
+.slider h2 {
+  color: #000000;
+}
+
+.slider ul
+{
+  display: flex;
+   padding: 0;
+   width: 450%;
+   animation: cambio 10s infinite alternate;
+}
+.slider li{
+  width: 75%;
+  list-style: none;
+}
+.slider img{
+  width: 40%;
+
+}
+
+@keyframes cambio
+{
+  0%{margin-left: 0;}
+  20% {margin-left: 0;}
+
+  35%{margin-left: -100% ;}
+  45%{margin-left: -100%;}
+
+  50%{margin-left: -200% ;}
+  70%{margin-left: -200%;}
+
+  75%{margin-left: -300%;}
+  100%{margin-left: -300%;}
+}
+
+.contenedor {
+  margin: auto;
+  width: 99%;
+}
+.info__columna {
+  background: #ffffff;
+  color: #fff;
+  padding: 15px;
+  margin-bottom: 30px;
+  
+}
+.info__columna2 {
+  background: #ffffff;
+  color: #fff;
+  padding: 15px;
+  margin-bottom: 30px;
+  text-center:on;
+  
+}
+.info__columna1 {
+  background: #94d15e;
+  color: #fff;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+.info__img{
+	width:90;
+}
+.info__titulo2{
+	color: #000000;
+	font-family:Algerian;
+}
+
+
+@media(min-width:480px) {
+
+
+
+  .info, .cursos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -90px;
+  }
+  .info__columna {
+    width: 32%;
+  }
+  .info__columna1 {
+    width: 32%;
+  }
+  .info__titulo {
+    font-size: 30px;
+    margin: 5px 0;
+    font-family:Algerian;
+  }
+  
+  //////////////////////////////////////////////////////////////////
+  .contenedor {
+	width: 95%;
+	max-width:1000px;
+	margin:auto;
+}
+ 
+.contenedor p {
+	margin-bottom:40px;
+}
+ 
+header nav {
+	background:#94d15e;
+	margin-bottom:10px;
+}
+ 
+header nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+ 
+header nav ul li {
+	float: left;
+}
+ 
+header nav ul li a {
+	display: block;
+	padding:20px;
+	color:#fff;
+	text-decoration: none;
+}
+ 
+header nav ul li a:hover {
+	background:#e0c1b8;
+}
+ 
+ 
+/* --- Clase que agregaremos cuando el usuario haga scroll --- */
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	max-width:1280px;
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+}
+///////////////////////////////////////////////////
+.contendor-galeria{
+
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap:  wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+.galeriaimg{
+  width:  300px;
+  height: 200px;
+  margin-bottom: 60px;
+  object-fit: cover;
+  filter: brightness(80%);
+  animation: escalar 1s infinite;
+}
+.galeriaimg:hover{
+  filter:brightness(100%);
+}
+@keyframes escalar{
+  to {
+    transform: scale(1);
+  }
+  from {
+    transform: scale(1.05);
+  }
+}
+
+  
