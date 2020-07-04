@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+<meta charset="utf-8">
+</head>
+<body>
+
+	<header th:replace="layout/layout ::header"></header>
+	<main>
+		<section class="container">
+			<div class="card text-center">
+				<div class="card-header">Carrito de compra</div>
+				<div class="card-body">
+
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Producto</th>	
+								<th scope="col">Fecha de Asignación</th>
+								<th scope="col">Cantidad</th>
+								<th scope="col"></th>
+																					
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="compra: ${compras}">
+					      <th scope="row" th:text="${compra.id}">1</th>
+						  <td th:text="${compra.producto.nombres + ': ' + compra.producto.costo}">.</td>
+						  <td th:text="${compra.fechaCompra}">.</td>
+						  <td th:text="${compra.cantidad}">.</td>
+						  <td>
+						  	<a href="" class="btn btn-info"> <i class="fas fa-info"></i> </a>
+								<a th:href="@{'/compraencasa/compras/edit/' + ${compra.id}}" class="btn btn-warning"> <i class="fas fa-edit"></i> </a>
+								<a th:href="@{'/compraencasa/compras/del/' + ${compra.id}}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+						  </td>
+				      
+				    </tr>
+							
+
+						</tbody>
+					</table>
+
+
+				</div>
+				<div class="card-footer text-center">
+				<a th:href ="@{/compraencasa/compras/new}" class= "btn btn-primary"><i class="fas fa-user-plus"></i> Agregar a Carrito</a>
+				<a th:href ="@{/compraencasa/compras/mensaje}" class= "btn btn-primary"><i class="fas fa-dollar-sign"></i> Realizar Compra</a>
+				</div>
+
+			</div>
+		</section>
+	</main>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>

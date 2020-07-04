@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "layout/layout :: head">
+</head>
+<body>
+<header th:replace="layout/layout :: header"></header>
+
+<main role="main">
+	<section class="container">
+	
+		<div class="row">
+		    <div class="col-sm"></div>
+		    <div class="col-sm">
+		      
+				<div class="card text-center">
+					<div class="card-header">NUEVO COMPRADOR</div>
+					<div class="card-body text-left">
+					
+						<form th:action="@{/compraencasa/signup/save}" th:object="${usuario}" method="post">
+						  <div class="form-row">
+						    <div class="form-group  col-md-12">
+						      <label for="username">Username</label>
+						      <input type="text" class="form-control" th:field="*{username}" placeholder="Ingrese el usuario">
+						    </div>
+						  </div>
+						  <div class="form-row">
+							  <div class="form-group col-md-12">
+							    <label for="password">Password</label>
+							    <input type="password" class="form-control" th:field="*{password}" placeholder="Ingrese el Password" >
+							  </div>
+						  </div>
+						  
+						  <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Registrar </button>
+						  <a th:href="@{/compraencasa}" class="btn btn-danger"><i class="fas fa-ban"></i> Cancelar</a>
+						</form>
+					
+					</div>
+					<div class="card-footer text-center">
+						
+					</div>
+				</div>
+				<div class="footer-copyright text-center py-3" style="color: #FFFFFF; background-color:#17202A;">
+						 <a href="http://localhost:8081/compraencasa/signupseller" >
+								REGISTRARSE COMO VENDEDOR</a>
+				</div>
+		      	<div style="color: #FFFFFF; background-color:#FFFFFF;">
+								.
+				</div>
+		    </div>
+		    <div class="col-sm"></div>
+		 </div>
+		 
+	</section>
+	
+</main>		
+ 		
+<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+ <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
+</head>
+<body>
+	<header th:replace="layout/layout ::header"></header>
+	<div class="modal-dialog text-center">
+		<div class="col-sm-8 main-section">
+			<div class="modal-content">
+				<div class="col-19 ">
+					<section>
+						<h1>Ingresar</h1>
+					</section>
+				</div>
+				<form class="col-12" th:action="@{/login}" method="post">
+					<div class="form-group" id="user-group">
+						<input type="text" class="form-control"
+							placeholder="Nombre de usuario" name="username" />
+					</div>
+					<div class="form-group" id="contrasena-group">
+						<input type="password" class="form-control"
+							placeholder="Contrasena" name="password" />
+					</div>
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-sign-in-alt"></i> Ingresar
+					</button>
+				</form>
+				<div class="col-12 forgot">
+					<p>
+						<a href="#">Recordar contrasena?</a>
+					</p>
+					<p>
+						<a href="#" th:href="@{/compraencasa/vendedor/registrar}">Registrar Vendedor</a>
+						<a>   /  </a>
+						<a href="#" th:href="@{/compraencasa/cliente/registrar}">Registrar Cliente</a>
+				</div>
+				<div th:if="${param.error}" class="alert alert-danger" role="alert">
+					Invalid username and password.</div>
+				<div th:if="${param.logout}" class="alert alert-success"
+					role="alert">You have been logged out.</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
