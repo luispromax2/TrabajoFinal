@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+<meta charset="utf-8">
+</head>
+<body>
+
+	<header th:replace="layout/layout ::header"></header>
+	<main>
+		<section class="container">
+			<div class="card text-center">
+				<div class="card-header">Lista de productos</div>
+				<div class="card-body">
+
+					<table class="table table-hover">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Vendedor</th>
+								<th scope="col">Código</th>								
+								<th scope="col">Nombre</th>
+								<th scope="col">Costo</th>							
+								<th scope="col">Cantidad(kg)</th>
+								<th scope="col">Foto</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="producto: ${productos}">
+					      <th scope="row" th:text="${producto.id}">1</th>
+						  <td th:text="${producto.vendedor.dni + ': ' + producto.vendedor.apellidos}">.</td>
+						  <td th:text="${producto.codigoProducto}">.</td>
+						  <td th:text="${producto.nombres}">.</td>
+						  <td th:text="${producto.costo}">.</td>
+						  <td th:text="${producto.cantidad}">.</td>
+						  <td th:text="${producto.foto}">.</td>
+						  <td>
+								<a sec:authorize="hasAuthority('ACCESS_EDITPRODUCTOAVENDER')" th:href="@{'/compraencasa/productos/edit/' + ${producto.id}}" class="btn btn-warning"> <i class="fas fa-edit"></i> </a>
+								<a sec:authorize="hasAuthority('ACCESS_DELPRODUCTOAVENDER')" th:href="@{'/compraencasa/productos/del/' + ${producto.id}}" class="btn btn-danger"> <i class="fas fa-trash"></i> </a>
+						  </td>
+				      
+				    </tr>
+							
+
+						</tbody>
+					</table>
+
+
+				</div>
+				<div class="card-footer text-center">
+				<a sec:authorize="hasAuthority('ACCESS_ADDPRODUCTOAVENDER')" th:href ="@{/compraencasa/productos/new}" class= "btn btn-primary"><i class="fas fa-plus"></i> Registrar Producto</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>

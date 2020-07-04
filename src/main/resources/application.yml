@@ -1,0 +1,27 @@
+#Mysql
+spring:  datasource:    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/compraencasadb?useSSL=false&serverTimezone=UTC
+    username: root
+    password: admin
+    
+  jpa:    database: mysql
+    hibernate:      ddl-auto: update
+    show-sql: true
+    properties:      hibernate:
+         dialect: org.hibernate.dialect.MySQL8Dialect
+         dialect.storage_engine: innodb
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+ 
+server:  port: 8081  
+
+   
+
+ 
+        
+  
+  
+      
